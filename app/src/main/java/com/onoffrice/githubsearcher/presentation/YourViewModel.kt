@@ -20,7 +20,6 @@ class YourViewModel(
     fun exampleCallCoroutines() {
 
         viewModelScope.launch(Dispatchers.IO) {
-
             runCatching {
                 useCase()
             }.onSuccess {

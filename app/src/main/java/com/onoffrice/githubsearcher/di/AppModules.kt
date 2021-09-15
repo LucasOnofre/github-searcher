@@ -2,7 +2,7 @@ package com.onoffrice.githubsearcher.di
 
 import com.onoffrice.githubsearcher.data.retrofit.HttpClient
 import com.onoffrice.githubsearcher.data.retrofit.RetrofitClient
-import com.onoffrice.githubsearcher.data.api.YourService
+import com.onoffrice.githubsearcher.data.api.GithubService
 import com.onoffrice.githubsearcher.data.datasource.RemoteDataSource
 import com.onoffrice.githubsearcher.data.datasource.RemoteDataSourceImpl
 import com.onoffrice.githubsearcher.data.repository.YourRepositoryImpl
@@ -29,7 +29,7 @@ val dataModules = module {
 val networkModules = module {
     single { RetrofitClient(application = androidContext()).newInstance() }
     single { HttpClient(get()) }
-    factory { get<HttpClient>().create(YourService::class.java) }
+    factory { get<HttpClient>().create(GithubService::class.java) }
 }
 
 val anotherModules = module {}

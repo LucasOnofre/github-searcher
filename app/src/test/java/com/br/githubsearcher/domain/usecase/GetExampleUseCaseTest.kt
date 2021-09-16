@@ -4,7 +4,6 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import com.onoffrice.githubsearcher.domain.repository.YourRepository
 import com.onoffrice.githubsearcher.domain.usecase.GetExampleUseCase
-import com.onoffrice.githubsearcher.presentation.model.ObjectPresentation
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test

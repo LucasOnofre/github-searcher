@@ -1,0 +1,36 @@
+apply from: "$rootProject.projectDir/android-library.gradle"
+
+android {
+    buildTypes {
+        release {
+            buildConfigField "String", "BASE_URL", "\"${Keys.get(project, "github.baseurl")}\""
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", "\"${Keys.get(project, "github.baseurl")}\""
+        }
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+}
+
+dependencies {
+    // Gson || Retrofit
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
+
+    //Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.31"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0"
+
+    //Koin
+    implementation "io.insert-koin:koin-android:3.1.2"
+
+    //Loggin
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+
+}

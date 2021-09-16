@@ -1,8 +1,6 @@
 package com.br.githubsearcher.domain.mapper
 
 import com.onoffrice.githubsearcher.domain.mapper.ObjectToPresentationMapper
-import com.onoffrice.githubsearcher.domain.model.ObjectDomain
-import com.onoffrice.githubsearcher.presentation.model.ObjectPresentation
 import org.junit.Test
 import kotlin.test.assertEquals
 

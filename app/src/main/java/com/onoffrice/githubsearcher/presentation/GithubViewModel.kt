@@ -4,24 +4,25 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.onoffrice.githubsearcher.domain.usecase.GetExampleUseCase
+import com.onoffrice.githubsearcher.domain.usecase.GetReposUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class YourViewModel(
-    private val useCase: GetExampleUseCase
+class GithubViewModel(
+    private val useCase: GetReposUseCase
 ) : ViewModel() {
 
-    private val _resultSuccess = MutableLiveData<Result<Boolean>>().apply { value = Result.success(false) }
+    private val _resultSuccess =
+        MutableLiveData<Result<Boolean>>().apply { value = Result.success(false) }
 
-    val resultSuccess : LiveData<Result<Boolean>>
+    val resultSuccess: LiveData<Result<Boolean>>
         get() = _resultSuccess
 
-    fun exampleCallCoroutines() {
+    fun getRepositories(page: Int = 0) {
 
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
-                useCase()
+                useCase(page = page)
             }.onSuccess {
 
                 // Do something case successful

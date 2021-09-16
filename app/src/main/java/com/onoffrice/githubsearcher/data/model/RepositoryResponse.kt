@@ -11,5 +11,5 @@ data class RepositoryResponse(
     @SerialName("incomplete_results")
     val incompleteResults: Boolean,
 
-    val items: List<Repository>
+    val items: List<RepositoryItemResponse>
 )

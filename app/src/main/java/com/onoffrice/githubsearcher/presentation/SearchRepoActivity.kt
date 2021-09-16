@@ -6,9 +6,9 @@ import com.onoffrice.githubsearcher.R
 import com.onoffrice.githubsearcher.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class YourActivity : AppCompatActivity(R.layout.activity_main) {
+class SearchRepoActivity : AppCompatActivity(R.layout.activity_main) {
 
-    private val viewModel: YourViewModel by viewModel() // Injetando a viewModel
+    private val viewModel: GithubViewModel by viewModel()
 
     private val viewBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -18,6 +18,6 @@ class YourActivity : AppCompatActivity(R.layout.activity_main) {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
-        viewModel.exampleCallCoroutines()
+        viewModel.getRepositories()
     }
 }

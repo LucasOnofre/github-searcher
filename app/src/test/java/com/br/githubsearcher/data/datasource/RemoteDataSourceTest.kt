@@ -5,7 +5,6 @@ import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import com.onoffrice.githubsearcher.data.datasource.RemoteDataSource
 import com.onoffrice.githubsearcher.data.repository.YourRepositoryImpl
-import com.onoffrice.githubsearcher.domain.model.ObjectDomain
 import com.onoffrice.githubsearcher.domain.repository.YourRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest

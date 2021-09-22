@@ -9,16 +9,19 @@ import com.onoffrice.githubsearcher.presentation.model.UserPresentation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SearchGithubUsersViewModel(
+class SearchUsersViewModel(
     private val useCase: GetUsersUseCase
 ) : ViewModel() {
 
-    private val _resultSuccess = MutableLiveData<Result<UserPresentation>>()
-
-    val resultSuccess: LiveData<Result<UserPresentation>>
+    private val _resultSuccess = MutableLiveData<UserPresentation?>()
+    val resultSuccess: LiveData<UserPresentation?>
         get() = _resultSuccess
 
-    fun getRepositories(search: String) {
+    private val _resultError = MutableLiveData<Throwable>()
+    val resultError: LiveData<Throwable>
+        get() = _resultError
+
+    fun getUser(search: String) {
 
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
@@ -26,12 +29,12 @@ class SearchGithubUsersViewModel(
             }.onSuccess {
 
                 // Do something case successful
-                _resultSuccess.postValue(it)
+                _resultSuccess.postValue(it.getOrNull())
 
             }.onFailure {
 
                 // Do something case failure
-                _resultSuccess.postValue(Result.failure(it))
+                _resultError.postValue(it)
 
             }
         }

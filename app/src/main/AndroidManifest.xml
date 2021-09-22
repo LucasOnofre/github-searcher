@@ -12,7 +12,7 @@ package="com.onoffrice.githubsearcher">
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.GithubSearcher">
-    <activity android:name=".presentation.YourActivity">
+    <activity android:name=".presentation.main.MainActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 

@@ -1,13 +1,14 @@
 package com.onoffrice.githubsearcher.data.datasource
 
 import com.onoffrice.githubsearcher.data.api.GithubService
-import com.onoffrice.githubsearcher.data.mapper.RepositoryToDomainMapper
+import com.onoffrice.githubsearcher.data.mapper.UserToDomainMapper
 
 class GithubRemoteDataSourceImpl(
     private val api: GithubService
 ) : GithubRemoteDataSource {
 
-    private val mapper: RepositoryToDomainMapper = RepositoryToDomainMapper()
+    private val mapper: UserToDomainMapper = UserToDomainMapper()
 
-    override suspend fun getRepositories(page: Int) = mapper.map(api.getRepositories(page = page))
+    override suspend fun getUsers(search: String) = mapper.map(api.getUser(search))
 }
+

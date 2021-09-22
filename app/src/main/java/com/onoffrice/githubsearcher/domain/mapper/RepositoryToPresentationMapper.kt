@@ -1,27 +1,14 @@
 package com.onoffrice.githubsearcher.domain.mapper
 
-import com.onoffrice.githubsearcher.domain.model.RepositoryDomain
-import com.onoffrice.githubsearcher.domain.model.RepositoryItemDomain
-import com.onoffrice.githubsearcher.presentation.model.RepositoryItemPresentation
-import com.onoffrice.githubsearcher.presentation.model.RepositoryPresentation
+import com.onoffrice.githubsearcher.domain.model.UserDomain
+import com.onoffrice.githubsearcher.presentation.model.UserPresentation
 import com.onoffrice.githubsearcher.utils.Mapper
 
-class RepositoryToPresentationMapper : Mapper<RepositoryDomain, RepositoryPresentation> {
+class RepositoryToPresentationMapper : Mapper<UserDomain, UserPresentation> {
 
-    override fun map(source: RepositoryDomain): RepositoryPresentation {
-        return RepositoryPresentation(
-            count = source.count,
-            incompleteResults = source.incompleteResults,
-            items = mapItems(source.items)
+    override fun map(source: UserDomain): UserPresentation {
+        return UserPresentation(
+            name = source.name
         )
-    }
-
-    private fun mapItems(items: List<RepositoryItemDomain>): List<RepositoryItemPresentation> {
-        return items.map {
-            RepositoryItemPresentation(
-                name = it.name,
-                owner = it.owner
-            )
-        }
     }
 }

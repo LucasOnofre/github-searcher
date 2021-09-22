@@ -2,9 +2,8 @@ package com.onoffrice.githubsearcher.domain.usecase
 
 import com.onoffrice.githubsearcher.domain.repository.GithubRepository
 
-class GetReposUseCase(
+class GetUsersUseCase(
     private val repository: GithubRepository
 ) {
-
-    suspend operator fun invoke(page: Int) = repository.getRepositories(page)
+    suspend operator fun invoke(search: String) = repository.getUsers(search)
 }

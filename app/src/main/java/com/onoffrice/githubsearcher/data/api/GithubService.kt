@@ -1,15 +1,13 @@
 package com.onoffrice.githubsearcher.data.api
 
-import com.onoffrice.githubsearcher.data.model.RepositoryResponse
+import com.onoffrice.githubsearcher.data.model.UserResponse
 import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.Path
 
 interface GithubService {
 
-    @GET("search/repositories")
-    suspend fun getRepositories(
-        @Query("q") query: String = "language:Kotlin",
-        @Query("sort") sort: String = "stars",
-        @Query("page") page: Int
-    ): RepositoryResponse
+    @GET("users/{username}")
+    suspend fun getUser(
+        @Path("username") search: String
+    ): UserResponse
 }

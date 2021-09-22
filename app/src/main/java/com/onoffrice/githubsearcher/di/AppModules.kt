@@ -6,19 +6,19 @@ import com.onoffrice.githubsearcher.data.datasource.GithubRemoteDataSource
 import com.onoffrice.githubsearcher.data.datasource.GithubRemoteDataSourceImpl
 import com.onoffrice.githubsearcher.data.repository.GithubRepositoryImpl
 import com.onoffrice.githubsearcher.domain.repository.GithubRepository
-import com.onoffrice.githubsearcher.domain.usecase.GetReposUseCase
-import com.onoffrice.githubsearcher.presentation.GithubViewModel
+import com.onoffrice.githubsearcher.domain.usecase.GetUsersUseCase
+import com.onoffrice.githubsearcher.presentation.home.SearchGithubUsersViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
 
 object AppModules {
     private val domainModules = module {
-        factory { GetReposUseCase(repository = get()) }
+        factory { GetUsersUseCase(repository = get()) }
     }
 
     private val presentationModules = module {
-        viewModel { GithubViewModel(useCase = get()) }
+        viewModel { SearchGithubUsersViewModel(useCase = get()) }
     }
 
     private val dataModules = module {

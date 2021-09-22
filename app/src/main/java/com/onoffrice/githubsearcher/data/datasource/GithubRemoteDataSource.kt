@@ -1,8 +1,8 @@
 package com.onoffrice.githubsearcher.data.datasource
 
-import com.onoffrice.githubsearcher.domain.model.RepositoryDomain
+import com.onoffrice.githubsearcher.domain.model.UserDomain
 
 interface GithubRemoteDataSource {
 
-    suspend fun getRepositories(page: Int): RepositoryDomain
+    suspend fun getUsers(search: String): UserDomain
 }

@@ -1,32 +1,32 @@
-package com.onoffrice.githubsearcher.presentation
+package com.onoffrice.githubsearcher.presentation.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.onoffrice.githubsearcher.domain.usecase.GetReposUseCase
+import com.onoffrice.githubsearcher.domain.usecase.GetUsersUseCase
+import com.onoffrice.githubsearcher.presentation.model.UserPresentation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class GithubViewModel(
-    private val useCase: GetReposUseCase
+class SearchGithubUsersViewModel(
+    private val useCase: GetUsersUseCase
 ) : ViewModel() {
 
-    private val _resultSuccess =
-        MutableLiveData<Result<Boolean>>().apply { value = Result.success(false) }
+    private val _resultSuccess = MutableLiveData<Result<UserPresentation>>()
 
-    val resultSuccess: LiveData<Result<Boolean>>
+    val resultSuccess: LiveData<Result<UserPresentation>>
         get() = _resultSuccess
 
-    fun getRepositories(page: Int = 0) {
+    fun getRepositories(search: String) {
 
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
-                useCase(page = page)
+                useCase(search)
             }.onSuccess {
 
                 // Do something case successful
-                _resultSuccess.postValue(Result.success(true))
+                _resultSuccess.postValue(it)
 
             }.onFailure {
 

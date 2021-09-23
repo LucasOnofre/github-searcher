@@ -1,8 +1,9 @@
-package com.onoffrice.githubsearcher
+package com.onoffrice.githubsearcher.application
 
 import android.app.Application
 import android.util.Log
 import com.holder.data.remote.di.DataRemoteModule
+import com.onoffrice.githubsearcher.BuildConfig
 import com.onoffrice.githubsearcher.di.AppModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.KoinApplication

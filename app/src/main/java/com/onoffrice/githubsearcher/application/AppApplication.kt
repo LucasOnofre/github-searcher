@@ -1,7 +1,6 @@
-package com.onoffrice.githubsearcher
+package com.onoffrice.githubsearcher.application
 
 import android.app.Application
-import com.onoffrice.githubsearcher.KoinAppDeclarationProvider
 import org.koin.core.context.startKoin
 
 class AppApplication : Application() {

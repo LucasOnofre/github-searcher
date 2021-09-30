@@ -27,13 +27,8 @@ class SearchUsersViewModel(
             runCatching {
                 useCase(search)
             }.onSuccess {
-
-                // Do something case successful
                 _resultSuccess.postValue(it.getOrNull())
-
             }.onFailure {
-
-                // Do something case failure
                 _resultError.postValue(it)
 
             }

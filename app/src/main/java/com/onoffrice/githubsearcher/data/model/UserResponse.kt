@@ -9,7 +9,7 @@ data class UserResponse(
     @SerialName("name")
     val name: String?,
 
-    @SerialName("avatar_url")
+    @SerialName("avatarUrl")
     val avatarUrl: String?,
 
     @SerialName("bio")

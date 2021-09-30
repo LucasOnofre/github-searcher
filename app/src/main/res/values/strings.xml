@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Github Searcher</string>
+    <string name="search_user_hint">Pesquisar</string>
+    <string name="search_user_btn">Buscar</string>
 </resources>

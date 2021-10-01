@@ -1,68 +1,67 @@
 package com.onoffrice.githubsearcher.data.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
+
 data class UserResponse(
 
-    @SerialName("name")
+    @SerializedName("name")
     val name: String?,
 
-    @SerialName("avatarUrl")
+    @SerializedName("avatar_url")
     val avatarUrl: String?,
 
-    @SerialName("bio")
+    @SerializedName("bio")
     val bio: String?,
 
-    @SerialName("blog")
+    @SerializedName("blog")
     val blog: String?,
 
-    @SerialName("company")
+    @SerializedName("company")
     val company: String?,
 
-    @SerialName("created_at")
+    @SerializedName("created_at")
     val createdAt: String?,
 
-    @SerialName("followers")
+    @SerializedName("followers")
     val followers: Int?,
 
-    @SerialName("followers_url")
+    @SerializedName("followers_url")
     val followersUrl: String?,
 
-    @SerialName("following")
+    @SerializedName("following")
     val following: Int?,
 
-    @SerialName("following_url")
+    @SerializedName("following_url")
     val followingUrl: String?,
 
-    @SerialName("gists_url")
+    @SerializedName("gists_url")
     val gistsUrl: String?,
 
-    @SerialName("html_url")
+    @SerializedName("html_url")
     val htmlUrl: String?,
 
-    @SerialName("id")
+    @SerializedName("id")
     val id: Int?,
 
-    @SerialName("location")
+    @SerializedName("location")
     val location: String?,
 
-    @SerialName("login")
+    @SerializedName("login")
     val login: String?,
 
-    @SerialName("public_gists")
+    @SerializedName("public_gists")
     val publicGists: Int?,
 
-    @SerialName("public_repos")
+    @SerializedName("public_repos")
     val publicRepos: Int?,
 
-    @SerialName("repos_url")
+    @SerializedName("repos_url")
     val reposUrl: String?,
 
-    @SerialName("subscriptions_url")
+    @SerializedName("subscriptions_url")
     val subscriptionsUrl: String?,
 
-    @SerialName("url")
+    @SerializedName("url")
     val url: String?
 )

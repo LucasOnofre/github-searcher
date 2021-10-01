@@ -18,12 +18,11 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
 dependencies {
     // Gson || Retrofit
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
 
     //Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.30"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.31"
 
     //Koin
     implementation "io.insert-koin:koin-android:3.1.2"
